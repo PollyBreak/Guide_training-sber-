@@ -9,11 +9,11 @@ public class NumberOfCities {
         HashMap <String, Integer> regions = new HashMap<>();
         for(City city: listOfCities){
             if (!regions.containsKey(city.getRegion())) {
-                regions.put(city.getRegion(),0);
+                regions.put(city.getRegion(),1);
             }
-        }
-        for (City city: listOfCities) {
-            regions.put(city.getRegion(), regions.get(city.getRegion())+1);
+            else {
+                regions.put(city.getRegion(), regions.get(city.getRegion())+1);
+            }
         }
         regions.forEach((key,value) -> System.out.println(key + " - " + value));
     }
